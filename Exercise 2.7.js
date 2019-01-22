@@ -1,5 +1,4 @@
 const readlineSync = require("readline-sync");
-const days = ["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 let n = parseFloat(readlineSync.question("Enter a number | "));
 console.log("You entered the number " + n + " so you will now need to enter " + n + " additionnal numbers.");
 let y = 0;

@@ -1,10 +1,13 @@
 const readlineSync = require("readline-sync");
-let array1 = [10, 55, 100];  //We define the array//
-let sum = 0; // We define the sum variable and we give it 0 value (or else it doesn't work)//
-for (let elem of array1) { // We change the value of the sum by adding up every single element of the array to it//
-  sum += elem;
+let array1 = [10, 55, 100];  //We define the array to be duplicated//
+let array2 = []; // We define the second array that's goind to be filled with the exact same content as the first one//
+for (let elem of array1) { //On utilise 'for of' pour désigner tous les elem du array1
+  array2.push(elem);   //On remplit l'array 2 avec elem qui a été défini pour désigner tous les elem du array1 juste au dessus
 }
-let average = sum / array1.length; //We define the average variable//
-console.log(average);
+console.log(array2); //On affiche l'array 2
 
-//Ici, si on définissait la val de average avant que la val de sum soit mise à jour ça marcherait pas, le résultat serait toujours 0 (logique puisque js lit le code de haut en bas)//
+//2ème méthode
+let array3 = array2.slice()
+console.log(array3);
+
+//slice allows us to copy an array or part of an array : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice //
