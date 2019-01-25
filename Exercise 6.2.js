@@ -6,10 +6,10 @@ class Rectangle {
     this.length = length;
   }
   collides(rectangle2){
-    if (this.topLeftYPos - this.width < rectangle2.topLeftYPos &&
-    this.topLeftYPos > rectangle2.topLeftYPos - rectangle2.width &&
-    this.topLeftXPos + this.length > rectangle2.topLeftXPos &&
-    this.topLeftXPos < rectangle2.topLeftXPos + rectangle2.length) {
+    if (this.topLeftXPos + this.length > rectangle2.topLeftXPos &&
+        this.topLeftXPos < rectangle2.topLeftXPos + rectangle2.length
+        this.topLeftYPos - this.width < rectangle2.topLeftYPos &&
+        this.topLeftYPos > rectangle2.topLeftYPos - rectangle2.width &&) {
       return rectangle1 + " collides with " + this
     }
   }
