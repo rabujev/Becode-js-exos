@@ -1,5 +1,6 @@
 const readlineSync = require("readline-sync");
 //it's working, need to do the bonus part of the guidelines now
+// how to write and read files on node.js : https://www.w3schools.com/nodejs/nodejs_filesystem.asp
 let pizzaFlavorsList = [];
 console.log("Hello! Welcome to the Pizza Flavors Manager.");
 console.log();
