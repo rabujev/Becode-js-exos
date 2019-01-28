@@ -1,7 +1,11 @@
 const readlineSync = require("readline-sync");
 //it's working, need to do the bonus part of the guidelines now
 // how to write and read files on node.js : https://www.w3schools.com/nodejs/nodejs_filesystem.asp
+// As Sam advised, I need to stop using recursive functions because they unnecessarily take memory, need to replace it with a standart loop
+// And so that makes it unnecessary to hold this program within a function 
+var fs = require('fs');
 let pizzaFlavorsList = [];
+pizzaFlavorsList = JSON.parse(fs.readFileSync('pizzaFlavorsList.json', "utf8"));  // attention  au format de readFileSync diff de readFile!
 console.log("Hello! Welcome to the Pizza Flavors Manager.");
 console.log();
 console.log("Please choose your actions: ");
@@ -33,6 +37,11 @@ function pizzaFlavFunction() {
       pizzaFlavFunction();
   } else if (menuNumber == 4) {
     console.log("Bye-bye");
+    let pizzaFlavorsListJSON = JSON.stringify(pizzaFlavorsList);
+    fs.writeFile('pizzaFlavorsList.json', pizzaFlavorsListJSON, 'utf8', function (err) {
+        if (err) throw err;
+        console.log("The file has been saved!");
+    });
   } else {
     pizzaFlavFunction();
   };
